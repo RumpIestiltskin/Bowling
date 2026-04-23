@@ -58,5 +58,19 @@ class GameTest {
 		assertEquals(game.score(), 24);
 	}
 	
+	@Test
+	void casGeneral() {
+		int[] scores = {1, 2, 10, 0, 10,
+			4, 2, 0, 10, 6, 2, 0, 10,
+			6, 4, 8, 2, 2, 7};
+		serie(scores);
+		assertEquals(game.score(), 122);
+		
+	}
+	
+	private void serie(int[] nbQuilles) {
+		for (int i=0; i<nbQuilles.length; i++)
+			game.roll(nbQuilles[i]);
+	}
 	
 }

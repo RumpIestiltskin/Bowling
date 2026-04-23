@@ -16,9 +16,13 @@ public class Game {
 			int tour1 = tours[i];
 			int tour2 = tours[i+1];
 			score+=tour1+tour2;
+			if (tour1==10) { //strike
+				score+=tour2+tours[i+2];
+			}
 			if (tour1+tour2==10) { //spare
 				score+=tours[i+2];
 			}
+			
 		}
 		return score;
 	}

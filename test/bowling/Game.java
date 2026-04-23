@@ -12,8 +12,14 @@ public class Game {
 	
 	public int score() {
 		int score = 0;
-		for (int i=0; i<numTour; i++)
-			score+=tours[i];
+		for (int i=0; i<numTour-1; i+=2) {
+			int tour1 = tours[i];
+			int tour2 = tours[i+1];
+			score+=tour1+tour2;
+			if (tour1+tour2==10) { //spare
+				score+=tours[i+2];
+			}
+		}
 		return score;
 	}
 }
